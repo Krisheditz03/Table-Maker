@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Table Generator</title>
+       <style>
+        #ans{
+            text-align: center;
+            justify-content: center;
+            align-items:center ;
+        }
+       </style>
+    </head>
+    <body style="text-align: center; background: linear-gradient(#B3FFAB,#061161); height: 100vh;">
+        <h2>Enter value to Generate table</h2>
+        
+        <label>Enter Number</label>
+            <input style="border: 2px solid red; border-radius: 5px;" type="number" id="number" /><br><br><br>
+            <input style="border: 2px solid red; border-radius: 5px;background-color: yellow;" type="button" value="generate" onclick="multiplicationTable()" />
+            <br/><br/><br/>
+            <div id="ans">
+        <script>
+            function multiplicationTable() {
+            var table;
+            table='<table id="mtable">';
+            var num=document.getElementById("number").value;
+            if(num==null || num=="")
+            num=5;
+               for(i=1;i<=10;i++){
+                  table+='<tr><td>'+num+' x '+i+' = '+num*i+'</td></tr>';
+               }
+            table+='</table>';
+            document.getElementById("ans").innerHTML = table;
+            }
+        </script>
+    </body>
+</html>
